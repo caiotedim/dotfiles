@@ -1,0 +1,26 @@
+{
+  "workbench.colorTheme": "Dracula",
+  "files.trimTrailingWhitespace": true,
+  "go.formatTool": "goimports",
+  "go.useLanguageServer": true,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "400",
+  "editor.tabSize": 4,
+  "yaml.schemas": {
+    "file:///home/cfrancisco/.vscode/extensions/atlassian.atlascode-2.3.2/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "atlascode.jira.jqlList": [
+    {
+      "enabled": true,
+      "id": "907ac6b6-216e-46ab-b307-e67e17359cb3",
+      "monitor": true,
+      "name": "SREUOL",
+      "query": "project = SREUOL AND ( fixVersion in unreleasedVersions() OR fixVersion is EMPTY ) AND status = \"SELECT TO DEVELOPMENT\"",
+      "siteId": "jira.intranet.uol.com.br"
+    }
+  ],
+  "atlascode.jira.explorer.fetchAllQueryResults": true,
+  "atlascode.jira.explorer.refreshInterval": 5,
+  "editor.wordWrap": "on" // Regular
+}

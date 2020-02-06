@@ -1,0 +1,60 @@
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# switch to workspace
+bindsym $mod+1 workspace 1 chrome
+bindsym $mod+2 workspace 2 term
+bindsym $mod+3 workspace 3 code
+bindsym $mod+4 workspace 4 slack
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+workspace 1 output $first_monitor $second_monitor $third_monitor
+workspace 2 output $first_monitor $second_monitor $third_monitor
+workspace 3 output $first_monitor $second_monitor $third_monitor
+workspace 4 output $first_monitor $second_monitor $third_monitor
+workspace 5 output $first_monitor $second_monitor $third_monitor
+workspace 6 output $first_monitor $second_monitor $third_monitor
+workspace 7 output $first_monitor $second_monitor $third_monitor
+workspace 8 output $first_monitor $second_monitor $third_monitor
+workspace 9 output $first_monitor $second_monitor $third_monitor
+workspace 10 output $third_monitor $first_monitor $second_monitor
+assign [class="^google-chrome|Google-chrome"] → 1 chrome
+assign [class="^terminator|Terminator$"] → 2 term
+assign [class="^code|Code"] → 3 code
+assign [class="^slack|Slack$"] → 4 slack
+# exec --no-startup-id source ~/.bashrc
+# lock session
+bindsym $mod+l exec /opt/i3lock-color/lock-run.sh
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+bar {
+        status_command i3status
+}
+exec --no-startup-id feh --bg-scale /home/cfrancisco/Pictures/Rick-and-Morty-Wallpaper-1920-x-1080-by-oppilonus.png
+exec --no-startup-id nm-applet
+exec --no-startup-id indicator-sound-switcher
+bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
+bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+
